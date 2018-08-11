@@ -13,6 +13,7 @@ public class HelloJob extends BaseJob {
 
     @Override
     protected void doExecute(JobExecutionContext context) {
-        log.info("### Hello Job is being executed!");
+        log.info("### {} is being executed!",
+                context.getJobDetail().getJobDataMap().get("JobName").toString());
     }
 }
